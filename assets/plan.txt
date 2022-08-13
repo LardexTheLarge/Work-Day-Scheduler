@@ -8,8 +8,8 @@ to each hour on inputs so if the current time 12pm then
 the current time is color red and past time is gray and 
 time to be is colored blue.
 
-first - get hourly clock to show - check
+first - get hourly clock to show - done
 
 second - get value to appear on input through local storage - half done
 
-third - get color coded hours to show with current time
+third - get color coded hours to show with current time - not done
