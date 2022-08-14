@@ -10,6 +10,6 @@ time to be is colored blue.
 
 first - get hourly clock to show - done
 
-second - get value to appear on input through local storage - half done
+second - get value to appear on input through local storage - done
 
-third - get color coded hours to show with current time - not done
+third - get color to corrispond with hour of the day - not done

@@ -8,17 +8,28 @@ var today = moment().format("dddd, MMMM Do YYYY, h a");
 $("#currentDay").text(today);
 
 function renderLastTask() {
-  var keyID = [8, 9, 10, 11, 12, 1, 2, 3, 4, 5];
-  //the value of timeslot gets taken from the local storage
-  $(".timeslot").val(JSON.parse(localStorage.getItem(keyID))); //Get
+  //the value of timeslot gets taken from the local storage and put in the
+  //correct time spot
+  for (let i = 1; i <= 12; i++) {
+    var keyValue = JSON.parse(localStorage.getItem(i));
+    console.log(keyValue);
+    $("#text-area-" + i).val(keyValue);
 
-  //displays the key to the textArea
-  textArea.text(keyID);
+    if (moment().format("h") == i) {
+      textArea.css("background-color", "redorange");
+    } else if (moment().format("h") < i) {
+      textArea.css("background-color", "gray");
+    } else if (moment().format("h") > i) {
+      textArea.css("background-color", "green");
+    }
+    console.log(moment().format("h") == i);
+  }
 }
 
 //saves text area when clicked
 saveBtn.on("click", function () {
   console.log("I was clicked");
+  //
   var slotId = this.id.split("-")[1];
   console.log(slotId);
 
@@ -27,5 +38,4 @@ saveBtn.on("click", function () {
 
   renderLastTask();
 });
-
 renderLastTask();
